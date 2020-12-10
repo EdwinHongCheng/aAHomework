@@ -9,7 +9,7 @@ Instructions: implement all of the pending specs (the `it` statements without bl
 =end
 
 describe Dessert do
-  let(:chef) { double("chef") }
+  let(:chef) { double("chef", name: "Gordon Ramsay") }
   subject(:cheese_cake) { Dessert.new("cake", 10, chef) }
 
   describe "#initialize" do # Finished #initialize
@@ -28,22 +28,33 @@ describe Dessert do
     end
 
     it "raises an argument error when given a non-integer quantity" do
-      expect { Dessert.new("cake", "ten", "Gordon Ramsay") }.to raise_error(ArgumentError)
+      expect { Dessert.new("cake", "ten", chef) }.to raise_error(ArgumentError)
     end
   end
 
   describe "#add_ingredient" do # Finished
     it "adds an ingredient to the ingredients array" do
-      cheese_cake.add_ingredient("flour")
-      expect(cheese_cake.ingredients).to eq(["flour"])
+      cheese_cake.add_ingredient("sugar")
+      expect(cheese_cake.ingredients).to eq(["sugar"])
     end
   end
 
-  # using expect(): write the running code example below it
-  describe "#mix!" do # Fin, Tricky 
+  # using receive: write the running code example below it
+  describe "#mix!" do # Fin, Tricky - referred to Solution
     it "shuffles the ingredient array" do
-      expect(cheese_cake.ingredients).to receive(:shuffle!)
+      ingredients = ["cream cheese", "egg", "sugar", "sour cream", "vanilla extract"]
+
+      ingredients.each do |ingredient|
+        cheese_cake.add_ingredient(ingredient)
+      end
+      expect(cheese_cake.ingredients).to eq(ingredients)
       cheese_cake.mix!
+      expect(cheese_cake.ingredients).not_to eq(cheese_cake)
+      expect(cheese_cake.ingredients.sort).to eq(ingredients.sort)
+
+      # My Old Answer - not thorough enough
+      # expect(cheese_cake.ingredients).to receive(:shuffle!)
+      # cheese_cake.mix!
     end
   end
 
@@ -54,14 +65,14 @@ describe Dessert do
     end
 
     it "raises an error if the amount is greater than the quantity" do
-      expect { cheese_cake.eat(999) }.to raise_error(RuntimeError)
+      expect { cheese_cake.eat(999) }.to raise_error("not enough left!")
     end
   end
 
   describe "#serve" do # Fin, Tricky
     it "contains the titleized version of the chef's name" do
-      expect(chef).to receive(:titleize)
-      cheese_cake.serve
+      allow(chef).to receive(:titleize).and_return("Chef Gordon Ramsay the Great Baker")
+      expect(cheese_cake.serve).to eq("Chef Gordon Ramsay the Great Baker has made 10 cakes!")
     end
   end
 
