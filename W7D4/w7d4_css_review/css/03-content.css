@@ -1,0 +1,77 @@
+/* PHASE 3: Content */
+
+
+/* Note: [Step 1] = in content.html file */
+
+
+/* [Step 2] */
+
+.content {
+
+    /* aAO: ...need a white background on the .content container. */
+    background: #fff;
+
+    /* aAO: ...need to constrain its width */
+    width: 900px;
+
+    /* aAO: ...need to center it (hint: margin!) */
+    margin: 0 auto;
+
+    /* aAO: also add borders to its left, right and bottom sides. */
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* [Steps 3.1 - 3.3] */
+
+/* Note: Step 3.3 (clearfix) = done in content.html file */
+
+.content-sidebar {
+
+    /* [Step 3.1] */
+    width: 200px;
+
+    /* [Step 3.2] */
+    float: left;
+
+    /* [Step 4.1] */
+    /* aAO: we'd like some whitespace to allow our text to breathe. */
+    padding: 20px;
+}
+
+.content-main {
+
+    /* [Step 3.1] */
+    width: 620px;
+
+    /* [Step 3.2] */
+    float: left;
+
+    /* [Step 4.2] */
+    padding: 20px;
+}
+
+
+/* [Steps 5.1 + 5.2] */
+
+.content h1 {
+
+    /* [Step 5.1] */
+    /* aAO: set the font-size and font-weight on the .content h1 */
+    font-size: 24px;
+    font-weight: 700;
+
+    /* [Step 5.2] */
+
+    /* aAO: Add a bottom margin to the header  */
+    /* -> to allow some space between it and the paragraph below. */
+    margin: 0 0 20px 0;
+}
+
+
+/* Unused in Phase 3 (but given to us by default) */
+.content p {
+
+}

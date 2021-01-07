@@ -1,0 +1,84 @@
+/* PHASE 4: Footer */
+
+/* Note: All Steps - Steps 1 to 7. Finished!!! */
+
+
+/* Note: read the 2nd-last paragraph for all the "instructions" */
+
+
+/* [Steps 1.1-3, and Steps 5.1-2] - in footer.html file */
+/* -> clearfixes */
+
+
+/* [Step 2.1 - 2.4] */
+
+.footer {
+
+    /* [Step 2.1] */
+    /* aAO: Set the width and the background... */
+    width: 900px;
+    background: #fff;
+
+    /* [Step 2.2] */
+     /* aAO: ...align the footer center... */
+    margin: 0 auto 50px auto;
+
+    
+    /* [Step 2.3] */
+    /* aAO: ...set the color and font-size... */
+    color: #aaa;
+    font-size: 14px;
+
+
+    /* [Step 2.4] */
+    /* ...and add the borders. */
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.footer-copy {
+    /* [Step 3.1] */
+    /* aAO:  Float the copyright to the left... */
+    float: left;
+
+    /* [Step 6.1] */
+    /* aAO: Use padding to space everything out */
+    padding: 20px;
+}
+
+.footer-links {
+    /* [Step 3.1] */
+    /* aAO: ...and the list of links to the right. */
+    float: right;
+
+    /* [Step 6.2] */
+    padding: 20px;
+}
+
+.footer-links > li {
+
+    /* [Step 4] */
+    /* aAO: Have the inner list items be floated to the left. */
+    float: left;
+
+    /* [Step 6.3] */
+    padding: 0 0 0 20px;
+}
+
+
+/* in Solution: .footer a { display: block; }
+- but do I need it? Can I just comment it out? 
+- can't see any differences even if I don't have it.
+*/
+.footer a {
+  display: block;
+}
+
+
+/* [Step 7 - Final Step] */
+
+/* aAO: Finally, set a hover state for the links. Et voila! */
+.footer a:hover {
+    color: #000;
+}

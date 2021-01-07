@@ -1,0 +1,60 @@
+/* PHASE 2: Navigation */
+
+/* Note 1: did some Steps in the navigation.html file */
+/* Note 2: Phases 1 + 2 covers all the basic CSS techniques */
+/* -> Phases 3 + 4 == just variations of Phases 1 + 2 */
+
+
+/* [Step 1.1] */
+
+.header-logo {
+
+    /* aAO: Set float: left; on .header-logo... */
+    float: left;
+
+    /* [Steps 3.1 and 3.3] */
+
+    /* aAO: Next up, add some borders... */
+    border-right: 1px solid #ccc;
+    font-weight: 700;
+}
+
+
+.header-list {
+
+    /* [Step 1.2] */
+
+    /* aAO: ...and float: right; on .header-list */
+    /* Note: have to do a clear-fix  */
+    /* - see [Step 1.3] in navigation.html */
+    float: right;
+}
+
+.header-list > li {
+
+    /* [Step 2.1] */
+    
+    /* aAO: Add float: left; rule to the .header-list > li selector. */
+    float: left;
+    /* [Step 2.2] clear-fix, in navigation.html file */
+
+
+    /* [Step 3.2] */
+    /* aAO: We'd also like a line on the  */
+    /* left side of all .header-list > li elements. */
+    border-left: 1px solid #ccc;
+}
+
+
+/* [Steps 4.1 and 4.2] */
+
+/* aAO: Use the .header-logo:hover and .header-list > li:hover  */
+/* to set the background property. */
+
+.header-logo:hover {
+  background: #000;
+}
+
+.header-list > li:hover {
+  background: #000;
+}

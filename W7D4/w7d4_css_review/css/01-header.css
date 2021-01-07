@@ -1,0 +1,85 @@
+/* PHASE 1: Header */
+
+
+/* 
+[NOTE]:
+aAO - AO link below - instructions + Live demo links + Solution:
+
+https://open.appacademy.io/learn/swe-in-person/rails/css-review
+*/
+
+
+
+body {
+
+  /* [Step 1] */
+  
+  /* chose 400 for font-weight and 16px */
+  /* use "SPECIFICATIONS.md" for my options */
+  /* then, use the "Live" Demo link as reference -> pick the right one */
+
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+
+  /* [Step 2] */
+
+  background: #eee;
+}
+
+
+/* [Step 3] */
+
+.header {
+  background: #f00;
+
+  /* aAO: Notice a thin gray line below the bar... */
+  border-bottom: 1px solid #ccc;
+
+
+  /* [Step 5.2] */
+  /* aAO: ...set the color property on the .header to make all the text white */
+  color: #fff;
+}
+
+
+/* [Step 4] */
+
+.header-nav {
+
+  /* aAO: ...and set the width property for the .header-nav element */
+  width: 900px;
+
+  /* aAO: ...let's give the .header-nav a temporary background color. */
+  /* aAO: temporary - to see the above effects */
+  /* background: green; */
+
+  /* aAO: ...we center block elements by giving them a margin: auto property. */
+  /* aAO: This will evenly space out the margins on the left and right side of an element. */
+  margin: 0 auto;
+
+
+  /* [Step 5.1] */
+  
+  /* aAO: set left and right gray borders on the .header-nav */
+  /* aAO: get rid of the temporary green background color */
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+
+}
+
+
+/* [Step 6] */
+
+/* 
+aAO: Let's use our CSS powers to override this default, 
+by setting display: block;, 
+together with the padding on all .header a elements. 
+*/
+
+.header a {
+  display: block;
+  padding: 10px 20px;
+}
+
+/* [Phase 1: Complete!] */
