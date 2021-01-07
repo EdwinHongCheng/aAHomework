@@ -1,0 +1,248 @@
+/* [Step 1] - way down below */
+
+/* [Step 2] - in index.html, <nav> section */
+
+/* [Step 3] - down below 
+- tricky, cuz Step 3.1 = above Media Query section */
+
+/* [Step 4] - also way down below. lots of steps */
+
+/* [Step 5 - Bonus] - extra stuff for visual effect */
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FEFFF1;
+}
+
+h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+ul li a, figcaption a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header > img {
+  width: 100px;
+  float: left;
+}
+
+.ingredients-list {
+  list-style: square inside;
+}
+
+ol {
+  list-style: upper-roman inside;
+}
+
+.user_review h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    width: 27px;
+    height: 27px;
+    background-image: url(../assets/stars.png);
+    vertical-align: bottom;
+}
+
+input[type="radio"]:checked {
+  background-position: 30px 30px;
+}
+
+
+input[type="submit"]:last-child {
+    background: gold;
+}
+
+input:last-child:hover {
+    -webkit-filter: brightness(90%);
+}
+
+ol li:nth-of-type(2n) {
+  background-color: whitesmoke;
+  margin: 10px 0;
+}
+
+h2 + .user_review {
+    border-top: 1px solid black;
+}
+
+nav {
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    padding: 20px;
+    display: block;
+}
+
+body {
+  margin: 0 auto;
+    width: 60%;
+}
+
+aside {
+    display: inline-block;
+}
+
+.ingredients-list li {
+    margin: 15px 0px;
+}
+
+input[type="text"], select {
+    display: block;
+    width: 175px;
+}
+
+select {
+    margin: 10px 0;
+    width: 180px;
+}
+
+textarea {
+    width: 350px;
+}
+
+label {
+    display: block;
+}
+
+
+/* [Step 3.1] */
+
+/* aAO: You want to make sure your hamburger is hidden until the window is smaller, 
+so let's first set the "hamburger-dropdown" element to display: none. */
+.hamburger-dropdown {
+  display: none;
+}
+
+
+/* Media Queries! */
+
+
+/* AKA where I need to write code */
+
+
+@media all and (max-width: 900px) {
+
+  /* [Step 1] */
+
+  /* aAO: Fill in the necessary code 
+  at the bottom of positioning_media_queries.css */
+
+  /* Note: now the columns won't collapse on each other */
+  .col {
+    min-width: 550px
+  }
+
+
+  /* [Step 3.2] - Note: 3.1 is above the Media Queries */
+
+
+  /* aAO: 
+  You know your hamburger will be taking the place of your old navbar 
+  so you should make sure it's not showing 
+  by setting the nav > ul's display to none.
+  */
+
+  /* Note: when hamburger = on the screen, this hides the normal nav */ 
+  nav ul {
+    display: none;
+  }
+
+
+  /* [Step 3.3] */
+
+  /* aAO: You'll also want to make sure your hamburger is showing! */
+  .hamburger-dropdown {
+    display: block;
+  }
+
+
+  /* [Step 3.4] */
+
+  /* aAO: Next, select the li within the hamburger-dropdown element and 
+  give it a background using the hamburger image from your assets folder. */
+  .hamburger-dropdown > li {
+    background: url(./hamburger.png);
+    background-repeat: no-repeat;
+
+    /* [Step 3.5] */
+
+    /* aAO: Set the width/height of the hamburger image to 50px 
+    and then set the background-size of the to 50px 50px */
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+
+
+    /* [Step 4.3] */
+
+    /* Solution note: nearest relatively positioned parent of absolute positioned child */
+    position: relative;
+
+    /* [Step 5.1 - Bonus] just a pointer finger when I hover over the hamburger */
+    cursor: pointer;
+  }
+
+
+  .hamburger-dropdown ul {
+
+    /* [Step 4.2] */
+
+    /* Solution note: 
+    Every time we position an element absolutely we should be thinking about
+    which parent element we need to position relatively */
+    position: absolute;
+
+
+    /* [Step 4.4] */
+
+    /* Note: makes our "drop down" actually drop downwards */
+    top: 50px;
+    left: 0;
+    flex-direction: column;
+
+
+    /* [Step 5.2 - Bonus] */
+    /* just gives our dropdown some visual depth */
+    box-shadow: black 5px 5px 10px;
+
+
+    /* [Step 5.3 - Bonus] */
+    /* prob here when some default browser doesn't change mouse to a pointer */
+    cursor: pointer;
+  }
+
+
+  /* [Step 4.1] */
+
+  /* aAO: Now let's work on the list of links 
+  that should only be showing when we hover on the hamburger. */
+
+  /* Solution note: This is how we create pure css dropdown effects. No JS required. */
+  .hamburger-dropdown:hover ul {
+    display: flex;
+    background: ghostwhite;
+  }
+
+  .hamburger-dropdown ul li:hover a {
+    text-decoration: underline;
+  }
+  
+}
+
