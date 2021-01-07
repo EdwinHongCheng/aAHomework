@@ -1,0 +1,5 @@
+<li><%= @album.title %></li>
+<li><%= @album.year %></li>
+<li><%= @album.live? %></li>
+<li><%= @album.band_id %></li>
+<li><%= Band.find(@album.band_id).name %></li>
